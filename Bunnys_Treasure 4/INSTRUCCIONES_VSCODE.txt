@@ -1,0 +1,23 @@
+BUNNY'S TREASURE - ABRIR EN VISUAL STUDIO CODE (MAC)
+
+1. Descomprime el ZIP.
+2. En Visual Studio Code: Archivo > Abrir carpeta > Bunnys_Treasure.
+3. Menú Terminal > Ejecutar tarea (Run Task) > Iniciar Bunny's Treasure.
+4. Abre http://localhost:8000 en Safari o Chrome.
+5. Mantén la tarea ejecutándose mientras juegas. Para detenerla, Terminal > Terminar tarea.
+
+NO HACE FALTA INSTALAR LA EXTENSIÓN LIVE SERVER.
+La tarea integrada utiliza Python 3 del Mac; si no está instalado, habrá que instalar Python o utilizar Live Server.
+Se necesita internet para descargar Three.js desde CDN.
+
+ARCHIVOS
+index.html: página principal
+style.css: apariencia
+ game.js: juego 3D, cámara, controles y colisiones
+assets/: escenario, personajes, guía y logotipo
+.vscode/tasks.json: tarea de arranque sin escribir comandos
+
+EDITAR EN game.js: CFG al principio controla posiciones, escalas, velocidad, salto y cámara.
+EXPORTAR DESDE BLENDER: Archivo > Exportar > glTF 2.0; formato GLB; conservar materiales y texturas; reemplazar los archivos correspondientes en assets/.
+
+NOTA: el proyecto aún requiere prueba visual de recorrido, posiciones y colisiones en el equipo de destino.

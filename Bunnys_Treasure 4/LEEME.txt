@@ -1,0 +1,45 @@
+BUNNY'S TREASURE — NIVEL 1 (THREE.JS + GLB ORIGINAL)
+
+CONTENIDO
+index.html: interfaz y carga de librerías.
+style.css: estilos de menús, textos y guía Rocky.
+game.js: renderizado 3D, personajes, cámara, controles, saltos y llave.
+assets/escenario1.glb: escenario original de Blender con sus materiales.
+assets/bunny.glb: personaje Bunny.
+assets/foxy.glb: personaje Foxy.
+assets/rocky.png: personaje guía 2D.
+assets/logo.png: portada.
+
+PARA JUGAR EN MAC
+1. Descomprime el ZIP y abre la carpeta Bunnys_Treasure.
+2. Abre Terminal (Command + Espacio y escribe Terminal).
+3. Escribe cd seguido de un espacio; arrastra la carpeta Bunnys_Treasure a la Terminal y presiona Enter.
+4. Escribe: python3 -m http.server 8000
+5. Abre http://localhost:8000 en Safari o Chrome.
+6. Requiere conexión a internet para descargar Three.js desde CDN.
+
+POR QUÉ HACE FALTA SERVIDOR LOCAL
+Los navegadores restringen la lectura de archivos GLB externos desde una página file://.
+El servidor local es solo para desarrollo; no necesitas instalar extensiones.
+
+CONTROLES
+WASD o flechas: moverse; ESPACIO: saltar; E: recoger llave.
+
+DÓNDE MODIFICAR POSICIONES Y ESCALAS
+En game.js, al principio, el objeto CFG contiene:
+start, rocks, bridge, finalRocks, key: coordenadas [X,Z].
+bunnyHeight, foxyHeight: altura en unidades del escenario.
+speed: velocidad horizontal; jumpSpeed: fuerza de salto; gravity: gravedad.
+cameraDistance, cameraHeight: distancia y altura de cámara.
+terrainX y terrainZ: límites del terreno.
+
+IMPORTACIÓN DESDE BLENDER
+Selecciona Archivo > Exportar > glTF 2.0, formato glTF Binary (.glb).
+Incluye materiales, UV y texturas en el GLB. No necesitas convertir el escenario a una imagen.
+Sustituye el archivo correspondiente dentro de assets/ conservando su nombre.
+Comprueba que los objetos estén en el eje Y vertical y tengan escala aplicada (Ctrl+A > Scale).
+
+NOTA
+Este proyecto utiliza geometrías y materiales originales, pero los puntos de colisión
+pueden requerir ajuste al probar el recorrido. La cámara se centra en Bunny, no en
+el bounds total del GLB, porque el escenario contiene objetos alejados.
